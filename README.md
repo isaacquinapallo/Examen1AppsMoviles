@@ -8,23 +8,40 @@ Aplicación móvil desarrollada en Ionic + Angular, que simula un foro donde los
 
 ### 1. Autenticación de Usuarios
 - Registro e inicio de sesión completamente funcional mediante Supabase Auth.
-- Almacenamiento del **nombre y foto de perfil** de cada usuario.
+![image](https://github.com/user-attachments/assets/964e9105-aa54-4d29-a5c5-f7869f07addd)
+
+
+- Almacenamiento del nombre y foto de perfil de cada usuario.
+![image](https://github.com/user-attachments/assets/be43edc5-f49d-4158-8670-01d0e178975e)
+![image](https://github.com/user-attachments/assets/7ab07994-dd91-4e24-a76a-0b2d63aff4b4)
+
+
 - Visualización en tiempo real de los datos de usuario en cada publicación.
+![image](https://github.com/user-attachments/assets/9557d27e-6d1a-402f-bdcd-f58ce06bdf68)
+
 
 ### 2. Interfaz del Foro
 - Interfaz moderna y responsiva para móviles.
 - Los usuarios pueden:
   - Publicar mensajes
   - Editar sus propias publicaciones
+![image](https://github.com/user-attachments/assets/778eed23-d9db-4357-a5ee-d477be13f320)
+
+
 - Se muestra claramente:
   - El nombre de usuario
   - Imagen de perfil
   - Contenido del mensaje
+![image](https://github.com/user-attachments/assets/bbef3ddb-a80b-4d4f-9783-0dadfaaa88f1)
+
 
 ### 3. Envío de Ubicación
 - Uso del GPS para capturar coordenadas actuales.
 - Las coordenadas son enviadas como parte de la publicación.
 - Enlace directo a Google Maps para visualizar la ubicación.
+![image](https://github.com/user-attachments/assets/cc5c637b-e737-4c49-bd6a-db2af6ae7216)
+
+
 
 ### 4. Captura y Envío de Fotografías (15 pts)
 - Integración con la cámara del dispositivo para capturar imágenes.
@@ -34,6 +51,8 @@ Aplicación móvil desarrollada en Ionic + Angular, que simula un foro donde los
 ### 5. Consumo de API REST (15 pts)
 - Consulta a la API pública de Rick and Morty (`https://rickandmortyapi.com/`).
 - El usuario puede enviar una frase divertida aleatoria obtenida desde la API como parte del chat o publicación.
+![image](https://github.com/user-attachments/assets/7e67437d-1bd9-4aa1-a3a2-ccf0de25f10e)
+
 
 ### 6. Interfaz de Usuario (10 pts)
 - Diseño limpio, responsivo y armonioso.
