@@ -52,7 +52,7 @@ Aplicación móvil desarrollada en Ionic + Angular, que simula un foro donde los
 
 
 ### 5. Consumo de API REST (15 pts)
-- Consulta a la API pública de Rick and Morty (`https://rickandmortyapi.com/`).
+- Consulta a la API pública de Chuck Norris.
 - El usuario puede enviar una frase divertida aleatoria obtenida desde la API como parte del chat o publicación.
 ![image](https://github.com/user-attachments/assets/7e67437d-1bd9-4aa1-a3a2-ccf0de25f10e)
 
