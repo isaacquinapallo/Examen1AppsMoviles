@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Verificación de correo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Verifica tu correo electrónico</h2>
+
+  <p>
+    Hemos enviado un correo de verificación a:
+    <strong>{{ userEmail }}</strong>
+  </p>
+
+  <p>
+    Por favor, revisa tu bandeja de entrada y sigue el enlace para activar tu cuenta.
+  </p>
+
+  <ion-button expand="block" (click)="resendVerification()">
+    Reenviar correo de verificación
+  </ion-button>
+
+  <ion-button expand="block" fill="outline" (click)="goToLogin()">
+    Volver a iniciar sesión
+  </ion-button>
+</ion-content>

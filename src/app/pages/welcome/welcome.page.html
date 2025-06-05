@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Bienvenido a IS44Conect</ion-title>
+  </ion-toolbar>
+  <div class="chat-icon-wrapper">
+    <ion-icon name="chatbubbles-outline" class="chat-icon"></ion-icon>
+  </div>
+</ion-header>
+
+
+
+<ion-content class="ion-padding" fullscreen>
+  <!-- Botones principales -->
+  <div class="action-buttons">
+    <ion-button expand="block" (click)="toggleLogin()">Iniciar sesión</ion-button>
+    <ion-button expand="block" color="secondary" (click)="toggleRegister()">Registrarse</ion-button>
+  </div>
+
+  <!-- Login Formulario -->
+  <div *ngIf="showLogin" class="form-card">
+    <h2>Iniciar sesión</h2>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="onLogin()">Ingresar</ion-button>
+  </div>
+
+  <!-- Registro Formulario -->
+  <div *ngIf="showRegister" class="form-card">
+    <h2>Registrarse</h2>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">URL Avatar</ion-label>
+      <ion-input [(ngModel)]="avatarUrl"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" color="success" (click)="onRegister()">Crear cuenta</ion-button>
+  </div>
+</ion-content>

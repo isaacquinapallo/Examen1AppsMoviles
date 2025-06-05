@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      Bienvenido a IS44Conect
+    </ion-title>
+    <ion-icon name="chatbubble-ellipses" slot="end" size="large" class="ion-padding-end" aria-hidden="true"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-card class="home-card">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">¡Listo para comenzar?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="ion-text-center">
+
+      <!-- Perfil -->
+      <ion-item lines="none" class="user-profile">
+        <ion-avatar slot="start">
+          <img [src]="avatarUrl || 'assets/default-avatar.png'" alt="Avatar del usuario" />
+        </ion-avatar>
+        <ion-label>
+          <h2 class="ion-text-capitalize">{{ name || 'Usuario' }}</h2>
+        </ion-label>
+      </ion-item>
+
+      <ion-button expand="block" color="secondary" (click)="goToChat()" class="ion-margin-top">
+        Ir al Chat
+      </ion-button>
+
+      <ion-button expand="block" color="danger" (click)="logout()" class="ion-margin-top">
+        Cerrar sesión
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

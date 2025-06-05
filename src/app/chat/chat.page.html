@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>💬 Chat en Vivo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" class="chat-content" role="main" tabindex="0">
+  <ion-list
+    class="chat-list"
+    *ngIf="messages.length; else noMessagesTemplate"
+    aria-live="polite"
+    aria-relevant="additions"
+  >
+    <ion-item
+      *ngFor="let chatMessage of messages"
+      class="chat-message"
+      [class.own-message]="chatMessage.user_id === currentUserId"
+      role="article"
+    >
+      <div [attr.aria-label]="'Mensaje de ' + chatMessage.user_name" tabindex="-1" class="message-wrapper">
+        <ion-avatar slot="start">
+          <img
+            [src]="chatMessage.avatar_url || 'assets/default-avatar.png'"
+            [alt]="chatMessage.user_name + ' avatar'"
+          />
+        </ion-avatar>
+
+        <ion-label>
+          <h3 class="chat-username">{{ chatMessage.user_name }}</h3>
+
+          <ng-container [ngSwitch]="chatMessage.type">
+            <p *ngSwitchCase="'text'" class="chat-text">{{ chatMessage.message }}</p>
+
+            <p *ngSwitchCase="'location'" class="chat-location">
+              <a
+                [href]="'https://www.google.com/maps/search/?api=1&query=' + chatMessage.message"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="'Ver ubicación de ' + chatMessage.user_name"
+              >
+                📍 Ubicación compartida — ¡Haz clic para verla en el mapa!
+              </a>
+            </p>
+
+            <p *ngSwitchCase="'image'" class="chat-image-container">
+              <img
+                [src]="chatMessage.message"
+                [alt]="'Imagen enviada por ' + chatMessage.user_name"
+                class="chat-image"
+                loading="lazy"
+                decoding="async"
+              />
+            </p>
+
+            <p *ngSwitchDefault class="chat-text">{{ chatMessage.message }}</p>
+          </ng-container>
+        </ion-label>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noMessagesTemplate>
+    <div class="no-messages" role="alert" aria-live="assertive">
+      <p>No hay mensajes aún. ¡Sé el primero en saludar! 👋</p>
+    </div>
+  </ng-template>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item lines="none" class="chat-input-row">
+      <ion-input
+        [(ngModel)]="newMessage"
+        placeholder="Escribe..."
+        (keydown.enter)="sendMessage()"
+        aria-label="Campo para escribir mensaje"
+        autofocus
+        class="chat-input"
+      ></ion-input>
+
+      <ion-button
+        type="button"
+        (click)="sendMessage()"
+        color="primary"
+        size="small"
+        title="Enviar mensaje"
+        aria-label="Enviar mensaje"
+        aria-pressed="false"
+      >
+        <ion-icon name="send-outline" slot="icon-only" aria-hidden="true"></ion-icon>
+      </ion-button>
+
+      <ion-button
+        type="button"
+        (click)="sendPhoto()"
+        size="small"
+        title="Enviar foto"
+        aria-label="Enviar foto"
+        aria-pressed="false"
+        style="--background: #69a6ff; --color: white;"
+      >
+        <ion-icon name="camera-outline" slot="icon-only" aria-hidden="true"></ion-icon>
+      </ion-button>
+
+      <ion-button
+        type="button"
+        (click)="fetchFunnyPhrase(); sendFunnyPhrase()"
+        size="small"
+        title="Enviar frase divertida"
+        aria-label="Enviar frase divertida"
+        aria-pressed="false"
+        style="--background: #005fa3; --color: white;"
+      >
+        <ion-icon name="happy-outline" slot="icon-only" aria-hidden="true"></ion-icon>
+      </ion-button>
+
+      <ion-button
+        type="button"
+        (click)="sendLocation()"
+        size="small"
+        title="Enviar ubicación"
+        aria-label="Enviar ubicación"
+        aria-pressed="false"
+        style="--background: #8fcfff; --color: #003f73;"
+      >
+        <ion-icon name="navigate-outline" slot="icon-only" aria-hidden="true"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>
+
