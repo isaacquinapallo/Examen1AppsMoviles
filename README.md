@@ -47,6 +47,9 @@ Aplicación móvil desarrollada en Ionic + Angular, que simula un foro donde los
 - Integración con la cámara del dispositivo para capturar imágenes.
 - Las fotos se suben automáticamente a la nube mediante Supabase Storage.
 - Las imágenes se muestran en tiempo real en el foro.
+![imagenexamen](https://github.com/user-attachments/assets/b7fe86db-1f5d-4ac7-89fb-24adacc6ca22)
+
+
 
 ### 5. Consumo de API REST (15 pts)
 - Consulta a la API pública de Rick and Morty (`https://rickandmortyapi.com/`).
@@ -72,7 +75,7 @@ Aplicación móvil desarrollada en Ionic + Angular, que simula un foro donde los
 - [Angular](https://angular.io/)
 - [Supabase](https://supabase.com/) – Autenticación, base de datos y almacenamiento
 - [Capacitor](https://capacitorjs.com/) – Acceso a GPS y cámara
-- [Rick and Morty API](https://rickandmortyapi.com/) – Frases divertidas
+- [Chuk Norrys) – Frases divertidas
 - HTML, CSS (con variables CSS personalizadas), TypeScript
 
 ---
@@ -101,14 +104,6 @@ ionic build
 npx cap add android
 npx cap open android
 ```
-
----
-
-## Capturas de Pantalla
-
-| Inicio de sesión | Chat en vivo | Envío de foto | Ubicación | API externa |
-|------------------|--------------|---------------|-----------|-------------|
-| ![](assets/screens/login.png) | ![](assets/screens/chat.png) | ![](assets/screens/camera.png) | ![](assets/screens/location.png) | ![](assets/screens/api.png) |
 
 ---
 
