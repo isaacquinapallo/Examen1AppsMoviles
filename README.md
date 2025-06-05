@@ -47,6 +47,7 @@ Aplicación móvil desarrollada en Ionic + Angular, que simula un foro donde los
 - Integración con la cámara del dispositivo para capturar imágenes.
 - Las fotos se suben automáticamente a la nube mediante Supabase Storage.
 - Las imágenes se muestran en tiempo real en el foro.
+- 
 ![imagenexamen](https://github.com/user-attachments/assets/b7fe86db-1f5d-4ac7-89fb-24adacc6ca22)
 
 
